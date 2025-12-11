@@ -1,3 +1,5 @@
+import { cn } from "@/functions/utils";
+import { ThemeProvider } from "@/providers/theme-provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
@@ -28,11 +30,16 @@ interface IRootLayout {
 
 export default function RootLayout({ children }: Readonly<IRootLayout>) {
   return (
-    <html lang="pt-BR">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html
+      lang="pt-BR"
+      className={cn(
+        "antialiased scroll-smooth",
+        geistSans.variable,
+        geistMono.variable,
+      )}
+    >
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

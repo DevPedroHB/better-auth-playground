@@ -18,9 +18,9 @@
   "scripts": {
     "build": "turbo run build",
     "check-types": "turbo run check-types",
-    "dev": "turbo run dev",
     "format-and-lint": "biome check .",
-    "format-and-lint:fix": "biome check . --write"
+    "format-and-lint:fix": "biome check . --write",
+    "start:dev": "turbo run start:dev"
   },
   "version": "1.0.0"
 }

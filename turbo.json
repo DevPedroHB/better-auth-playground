@@ -13,12 +13,12 @@
     "check-types": {
       "dependsOn": ["^check-types"]
     },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
     "lint": {
       "dependsOn": ["^lint"]
+    },
+    "start:dev": {
+      "cache": false,
+      "persistent": true
     }
   },
   "ui": "tui"
