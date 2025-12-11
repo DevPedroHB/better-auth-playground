@@ -1,0 +1,9 @@
+{
+  "license": "MIT",
+  "name": "@better-auth-playground/biome-config",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "1.0.0"
+}

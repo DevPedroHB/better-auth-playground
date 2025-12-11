@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@tsconfig/node24": "^24.0.3"
+  },
+  "license": "MIT",
+  "name": "@better-auth-playground/typescript-config",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "1.0.0"
+}

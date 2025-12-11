@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "next": "16.0.8",
+    "react": "19.2.1",
+    "react-dom": "19.2.1"
+  },
+  "devDependencies": {
+    "@better-auth-playground/biome-config": "workspace:*",
+    "@better-auth-playground/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "name": "@better-auth-playground/web",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "format": "biome format --write",
+    "lint": "biome check",
+    "start": "next start"
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,26 @@
+{
+  "author": {
+    "email": "pedrohb.dev@outlook.com",
+    "name": "Pedro Henrique Bergamo",
+    "url": "https://github.com/DevPedroHB"
+  },
+  "devDependencies": {
+    "turbo": "^2.6.3",
+    "typescript": "5.9.2"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "license": "MIT",
+  "name": "better-auth-playground",
+  "packageManager": "pnpm@10.25.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "check-types": "turbo run check-types",
+    "dev": "turbo run dev",
+    "format-and-lint": "biome check .",
+    "format-and-lint:fix": "biome check . --write"
+  },
+  "version": "1.0.0"
+}
