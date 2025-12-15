@@ -1,6 +1,7 @@
 "use client";
 
 import { themes } from "@/constants/themes";
+import { useMountedState } from "@/functions/use-mounted-state";
 import { SunMoon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "./ui/button";
@@ -13,15 +14,28 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { Spinner } from "./ui/spinner";
 
 export function ToggleTheme() {
-  const { theme, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
+  const mounted = useMountedState();
+
+  if (!mounted) {
+    return (
+      <Button type="button" variant="outline" size="icon" disabled>
+        <Spinner className="w-4 h-4" />
+      </Button>
+    );
+  }
+
+  const currentTheme = themes.find((t) => t.id === resolvedTheme);
+  const IconTheme = currentTheme?.icon ?? SunMoon;
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <SunMoon />
+        <Button type="button" variant="outline" size="icon">
+          <IconTheme />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
@@ -31,12 +45,12 @@ export function ToggleTheme() {
           value={theme}
           onValueChange={setTheme}
         >
-          {themes.map((theme) => {
-            const Icon = theme.icon;
+          {themes.map((t) => {
+            const Icon = t.icon;
 
             return (
-              <DropdownMenuRadioItem key={theme.id} value={theme.id}>
-                {theme.name}
+              <DropdownMenuRadioItem key={t.id} value={t.id}>
+                {t.name}
                 <DropdownMenuShortcut>
                   <Icon />
                 </DropdownMenuShortcut>

@@ -3,7 +3,7 @@
 ## Features
 
 - [X] Adding Shadcn
-- [ ] Drizzle Setup
+- [X] Drizzle Setup
 - [ ] Better Auth Setup
 - [ ] Email Sign Up
 - [ ] Email Sign In

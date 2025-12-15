@@ -1,0 +1,5 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
+  "extends": ["@better-auth-playground/biome-config/base.json"],
+  "root": false
+}

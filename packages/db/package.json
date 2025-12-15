@@ -1,0 +1,39 @@
+{
+  "author": "Pedro Henrique Bergamo <pedrohb.dev@outlook.com>",
+  "dependencies": {
+    "@better-auth-playground/env": "workspace:*",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.45.1",
+    "drizzle-zod": "^0.8.3",
+    "postgres": "^3.4.7",
+    "zod": "^4.2.0"
+  },
+  "description": "Database package for Better Auth Playground",
+  "devDependencies": {
+    "@better-auth-playground/biome-config": "workspace:*",
+    "@better-auth-playground/typescript-config": "workspace:*",
+    "@biomejs/biome": "^2.3.9",
+    "@types/node": "^20.19.26",
+    "drizzle-kit": "^0.31.8",
+    "drizzle-seed": "^0.3.1",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "keywords": [
+    "database",
+    "drizzle",
+    "postgresql"
+  ],
+  "license": "MIT",
+  "main": "src/index.ts",
+  "name": "@better-auth-playground/db",
+  "packageManager": "pnpm@10.25.0",
+  "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "version": "1.0.0"
+}
