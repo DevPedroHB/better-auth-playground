@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "name": "better-auth-playground",
-  "packageManager": "pnpm@10.25.0",
+  "packageManager": "pnpm@10.27.0",
   "private": true,
   "scripts": {
     "build": "turbo run build",

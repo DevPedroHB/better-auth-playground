@@ -1,20 +1,20 @@
 {
-  "_version": "24.0.0",
-  "$schema": "https://www.schemastore.org/tsconfig",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "exclude": ["node_modules"],
-  "extends": "@better-auth-playground/typescript-config/nextjs.json",
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "**/*.mts"
-  ]
+	"_version": "24.0.0",
+	"$schema": "https://www.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	},
+	"exclude": ["node_modules"],
+	"extends": "@better-auth-playground/typescript-config/nextjs.json",
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts",
+		".next/dev/types/**/*.ts",
+		"**/*.mts"
+	]
 }
