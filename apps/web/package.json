@@ -1,7 +1,10 @@
 {
   "dependencies": {
+    "@better-auth-playground/db": "workspace:*",
     "@radix-ui/react-dropdown-menu": "^2.1.16",
     "@radix-ui/react-slot": "^1.2.4",
+    "@t3-oss/env-core": "^0.13.10",
+    "better-auth": "^1.4.10",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.560.0",
@@ -10,7 +13,8 @@
     "react": "19.2.1",
     "react-dom": "19.2.1",
     "react-use": "^17.6.0",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.2.0"
   },
   "devDependencies": {
     "@better-auth-playground/biome-config": "workspace:*",

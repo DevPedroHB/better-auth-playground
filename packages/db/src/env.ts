@@ -6,10 +6,11 @@ export const env = createEnv({
 		NODE_ENV: z
 			.enum(["development", "test", "production"])
 			.default("development"),
-		DATABASE_URL: z.url(),
+		DATABASE_URL: z.url().startsWith("postgresql://"),
 	},
-	clientPrefix: "NEXT_",
+	clientPrefix: "",
 	client: {},
+	shared: {},
 	runtimeEnv: process.env,
 	emptyStringAsUndefined: true,
 });

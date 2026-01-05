@@ -1,7 +1,7 @@
-import { env } from "@better-auth-playground/env";
 import { drizzle } from "drizzle-orm/postgres-js";
 import { createSchemaFactory } from "drizzle-zod";
 import postgres from "postgres";
+import { env } from "./env";
 import { schema } from "./schemas";
 
 export const sql = postgres(env.DATABASE_URL);

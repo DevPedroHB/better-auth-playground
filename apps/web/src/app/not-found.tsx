@@ -31,7 +31,7 @@ export default function NotFound() {
 						um lugar seguro.
 					</EmptyDescription>
 				</EmptyHeader>
-				<EmptyContent className="flex-row justify-center gap-2">
+				<EmptyContent className="flex-row flex-wrap justify-center gap-2">
 					<BackNavigationButton>
 						<ArrowLeft />
 						Página anterior

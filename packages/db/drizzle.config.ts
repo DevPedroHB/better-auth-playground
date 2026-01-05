@@ -1,6 +1,6 @@
-import { env } from "@better-auth-playground/env";
 import "dotenv/config";
 import { defineConfig } from "drizzle-kit";
+import { env } from "./src/env";
 
 export default defineConfig({
 	dialect: "postgresql",

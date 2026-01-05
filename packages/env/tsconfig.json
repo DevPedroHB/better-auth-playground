@@ -1,7 +1,0 @@
-{
-	"_version": "24.0.0",
-	"$schema": "https://www.schemastore.org/tsconfig",
-	"exclude": ["node_modules"],
-	"extends": "@better-auth-playground/typescript-config/base.json",
-	"include": ["**/*.ts"]
-}

@@ -16,7 +16,9 @@ export function BackNavigationButton({
 	const router = useRouter();
 
 	function handleClick(event: MouseEvent<HTMLButtonElement>) {
-		onClick?.(event);
+		if (onClick) {
+			onClick(event);
+		}
 
 		const hasNavigationHistory = window.history.length > 1;
 

@@ -1,7 +1,7 @@
 {
   "author": "Pedro Henrique Bergamo <pedrohb.dev@outlook.com>",
   "dependencies": {
-    "@better-auth-playground/env": "workspace:*",
+    "@t3-oss/env-core": "^0.13.10",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.45.1",
     "drizzle-zod": "^0.8.3",
