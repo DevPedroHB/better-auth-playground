@@ -1,3 +1,4 @@
+import { SignOutDialog } from "@/components/sign-out-dialog";
 import { ToggleTheme } from "@/components/toggle-theme";
 import { Button } from "@/components/ui/button";
 import { auth } from "@/libs/auth";
@@ -18,14 +19,16 @@ export default async function Home() {
 		<main className="flex flex-col justify-center items-center gap-4 p-4 min-h-svh">
 			<ToggleTheme />
 			{session && (
-				<pre className="bg-card shadow-sm p-4 border rounded-xl text-card-foreground">
+				<pre className="bg-card shadow-sm p-4 border rounded-xl max-w-xl overflow-auto text-card-foreground">
 					<code>{JSON.stringify(session, null, 2)}</code>
 				</pre>
 			)}
 			{session ? (
-				<Button type="button" asChild>
-					<Link href="/auth/sign-out">Sair</Link>
-				</Button>
+				<SignOutDialog asChild>
+					<Button type="button" variant="destructive">
+						Sair
+					</Button>
+				</SignOutDialog>
 			) : (
 				<Button type="button" asChild>
 					<Link href="/auth/sign-up">Inscrever-se</Link>

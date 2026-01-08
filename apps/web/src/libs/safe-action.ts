@@ -4,6 +4,7 @@ import {
 	createSafeActionClient,
 } from "next-safe-action";
 import z from "zod";
+import { env } from "./env";
 
 const loggingMiddleware = createMiddleware().define(
 	async ({ next, clientInput, metadata }) => {
@@ -13,10 +14,12 @@ const loggingMiddleware = createMiddleware().define(
 
 		const executionTime = (performance.now() - startTime).toFixed(2);
 
-		console.log("Result ->", result);
-		console.log("Client input ->", clientInput);
-		console.log("Metadata ->", metadata);
-		console.log("Action execution took", executionTime, "ms");
+		if (env.NODE_ENV === "development") {
+			console.log("Result ->", result);
+			console.log("Client input ->", clientInput);
+			console.log("Metadata ->", metadata);
+			console.log("Action execution took", executionTime, "ms");
+		}
 
 		return result;
 	},

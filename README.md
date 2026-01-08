@@ -6,7 +6,7 @@
 - [X] Drizzle Setup
 - [X] Better Auth Setup
 - [X] Email Sign Up
-- [ ] Sign Out
+- [X] Sign Out Dialog
 - [ ] Email Sign In
 - [ ] Arcjet Security Setup
 - [ ] OAuth Sign Up | Sign In

@@ -1,8 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { FieldDescription } from "@/components/ui/field";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import { SignUpForm } from "./_components/sign-up-form";
 
 export const metadata: Metadata = {
@@ -17,13 +19,17 @@ export default function SignUp() {
 			<Card className="p-0 overflow-hidden">
 				<CardContent className="grid md:grid-cols-2 p-0">
 					<div className="hidden md:block relative bg-muted">
-						<Image
-							src="/images/sign-up-banner.jpg"
-							alt="Imagem aleatória"
-							width={3584}
-							height={5376}
-							className="absolute inset-0 brightness-[0.5] w-full h-full object-center object-cover"
-						/>
+						<Suspense
+							fallback={<Skeleton className="absolute inset-0 size-full" />}
+						>
+							<Image
+								src="/images/sign-up-banner.jpg"
+								alt="Imagem aleatória"
+								width={3584}
+								height={5376}
+								className="absolute inset-0 brightness-[0.5] size-full object-center object-cover"
+							/>
+						</Suspense>
 					</div>
 					<SignUpForm />
 				</CardContent>
