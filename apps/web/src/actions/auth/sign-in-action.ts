@@ -2,20 +2,20 @@
 
 import { auth } from "@/libs/auth";
 import { actionClient } from "@/libs/safe-action";
-import { signUpSchema } from "@/types/schemas/sign-up-schema";
+import { signInSchema } from "@/types/schemas/sign-in-schema";
 import { headers } from "next/headers";
 import { permanentRedirect } from "next/navigation";
 
-export const signUpAction = actionClient
-	.metadata({ actionName: "signUpAction" })
-	.inputSchema(signUpSchema)
-	.action(async ({ parsedInput: { confirmPassword, ...data } }) => {
+export const signInAction = actionClient
+	.metadata({ actionName: "signInAction" })
+	.inputSchema(signInSchema)
+	.action(async ({ parsedInput }) => {
 		const callbackURL = "/";
 
-		await auth.api.signUpEmail({
+		await auth.api.signInEmail({
 			headers: await headers(),
 			body: {
-				...data,
+				...parsedInput,
 				callbackURL,
 			},
 		});

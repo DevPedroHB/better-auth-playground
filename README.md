@@ -7,7 +7,7 @@
 - [X] Better Auth Setup
 - [X] Email Sign Up
 - [X] Sign Out Dialog
-- [ ] Email Sign In
+- [X] Email Sign In
 - [ ] Arcjet Security Setup
 - [ ] OAuth Sign Up | Sign In
 - [ ] Auth Redirects

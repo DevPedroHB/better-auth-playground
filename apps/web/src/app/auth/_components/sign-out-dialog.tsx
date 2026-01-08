@@ -5,7 +5,7 @@ import { useActionErrorHandler } from "@/hooks/use-action-error-handler";
 import { useAction } from "next-safe-action/hooks";
 import { ComponentProps } from "react";
 import { toast } from "sonner";
-import { ButtonLoading } from "./button-loading";
+import { ButtonLoading } from "../../../components/button-loading";
 import {
 	AlertDialog,
 	AlertDialogAction,
@@ -16,7 +16,7 @@ import {
 	AlertDialogHeader,
 	AlertDialogTitle,
 	AlertDialogTrigger,
-} from "./ui/alert-dialog";
+} from "../../../components/ui/alert-dialog";
 
 export function SignOutDialog(
 	props: ComponentProps<typeof AlertDialogTrigger>,

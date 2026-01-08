@@ -1,10 +1,10 @@
-import { SignOutDialog } from "@/components/sign-out-dialog";
 import { ToggleTheme } from "@/components/toggle-theme";
 import { Button } from "@/components/ui/button";
 import { auth } from "@/libs/auth";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import Link from "next/link";
+import { SignOutDialog } from "../auth/_components/sign-out-dialog";
 
 export const metadata: Metadata = {
 	title: "Início",
@@ -31,7 +31,7 @@ export default async function Home() {
 				</SignOutDialog>
 			) : (
 				<Button type="button" asChild>
-					<Link href="/auth/sign-up">Inscrever-se</Link>
+					<Link href="/auth/sign-in">Entrar</Link>
 				</Button>
 			)}
 		</main>
