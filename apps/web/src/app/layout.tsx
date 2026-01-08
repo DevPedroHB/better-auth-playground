@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/functions/utils";
 import { ThemeProvider } from "@/providers/theme-provider";
 import type { Metadata } from "next";
@@ -39,7 +40,10 @@ export default function RootLayout({ children }: Readonly<IRootLayout>) {
 			)}
 		>
 			<body>
-				<ThemeProvider>{children}</ThemeProvider>
+				<ThemeProvider>
+					{children}
+					<Toaster visibleToasts={9} closeButton richColors />
+				</ThemeProvider>
 			</body>
 		</html>
 	);

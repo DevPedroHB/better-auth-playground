@@ -4,8 +4,9 @@
 
 - [X] Adding Shadcn
 - [X] Drizzle Setup
-- [ ] Better Auth Setup
-- [ ] Email Sign Up
+- [X] Better Auth Setup
+- [X] Email Sign Up
+- [ ] Sign Out
 - [ ] Email Sign In
 - [ ] Arcjet Security Setup
 - [ ] OAuth Sign Up | Sign In

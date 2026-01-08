@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { ComponentProps, MouseEvent } from "react";
+import { ComponentProps, MouseEvent, useCallback } from "react";
 import { Button } from "./ui/button";
 
 interface IBackNavigationButton extends ComponentProps<typeof Button> {
@@ -15,19 +15,24 @@ export function BackNavigationButton({
 }: IBackNavigationButton) {
 	const router = useRouter();
 
-	function handleClick(event: MouseEvent<HTMLButtonElement>) {
-		if (onClick) {
-			onClick(event);
-		}
+	const handleClick = useCallback(
+		(event: MouseEvent<HTMLButtonElement>) => {
+			onClick?.(event);
 
-		const hasNavigationHistory = window.history.length > 1;
+			if (event.defaultPrevented) {
+				return;
+			}
 
-		if (hasNavigationHistory) {
-			router.back();
-		} else {
-			router.push(fallbackPath);
-		}
-	}
+			const hasNavigationHistory = window.history.length > 2;
+
+			if (hasNavigationHistory) {
+				router.back();
+			} else {
+				router.push(fallbackPath);
+			}
+		},
+		[onClick, router, fallbackPath],
+	);
 
 	return <Button type="button" onClick={handleClick} {...props} />;
 }

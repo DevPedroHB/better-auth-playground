@@ -1,9 +1,11 @@
 "use client";
 
 import { themes } from "@/constants/themes";
+import { cn } from "@/functions/utils";
 import { useMountedState } from "@/hooks/use-mounted-state";
 import { SunMoon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useMemo } from "react";
 import { Button } from "./ui/button";
 import {
 	DropdownMenu,
@@ -23,19 +25,22 @@ export function ToggleTheme() {
 	if (!mounted) {
 		return (
 			<Button type="button" variant="outline" size="icon" disabled>
-				<Spinner className="w-4 h-4" />
+				<Spinner />
 			</Button>
 		);
 	}
 
-	const currentTheme = themes.find((t) => t.id === resolvedTheme);
-	const IconTheme = currentTheme?.icon ?? SunMoon;
+	const CurrentIcon = useMemo(() => {
+		const currentTheme = themes.find((t) => t.id === resolvedTheme);
+
+		return currentTheme?.icon ?? SunMoon;
+	}, [resolvedTheme]);
 
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
 				<Button type="button" variant="outline" size="icon">
-					<IconTheme />
+					<CurrentIcon />
 				</Button>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent>
@@ -47,12 +52,13 @@ export function ToggleTheme() {
 				>
 					{themes.map((t) => {
 						const Icon = t.icon;
+						const isActive = theme === t.id;
 
 						return (
 							<DropdownMenuRadioItem key={t.id} value={t.id}>
 								{t.name}
 								<DropdownMenuShortcut>
-									<Icon />
+									<Icon className={cn(isActive && "text-primary")} />
 								</DropdownMenuShortcut>
 							</DropdownMenuRadioItem>
 						);
