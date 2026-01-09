@@ -1,11 +1,7 @@
 "use client";
 
 import { signOutAction } from "@/actions/auth/sign-out-action";
-import { useActionErrorHandler } from "@/hooks/use-action-error-handler";
-import { useAction } from "next-safe-action/hooks";
-import { ComponentProps } from "react";
-import { toast } from "sonner";
-import { ButtonLoading } from "../../../components/button-loading";
+import { ButtonLoading } from "@/components/button-loading";
 import {
 	AlertDialog,
 	AlertDialogAction,
@@ -16,7 +12,11 @@ import {
 	AlertDialogHeader,
 	AlertDialogTitle,
 	AlertDialogTrigger,
-} from "../../../components/ui/alert-dialog";
+} from "@/components/ui/alert-dialog";
+import { useActionErrorHandler } from "@/hooks/use-action-error-handler";
+import { useAction } from "next-safe-action/hooks";
+import { ComponentProps } from "react";
+import { toast } from "sonner";
 
 export function SignOutDialog(
 	props: ComponentProps<typeof AlertDialogTrigger>,
@@ -31,10 +31,6 @@ export function SignOutDialog(
 			reset();
 		},
 	});
-
-	async function handleSignOut() {
-		await executeAsync();
-	}
 
 	return (
 		<AlertDialog>
@@ -56,7 +52,7 @@ export function SignOutDialog(
 						<ButtonLoading
 							type="button"
 							isLoading={isPending}
-							onClick={handleSignOut}
+							onClick={() => executeAsync()}
 						>
 							Sair da conta
 						</ButtonLoading>

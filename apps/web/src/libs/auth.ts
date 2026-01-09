@@ -18,7 +18,23 @@ export const auth = betterAuth({
 		enabled: true,
 		revokeSessionsOnPasswordReset: true,
 	},
-	socialProviders: {},
+	socialProviders: {
+		discord: {
+			enabled: true,
+			clientId: env.DISCORD_CLIENT_ID,
+			clientSecret: env.DISCORD_CLIENT_SECRET,
+		},
+		github: {
+			enabled: true,
+			clientId: env.GITHUB_CLIENT_ID,
+			clientSecret: env.GITHUB_CLIENT_SECRET,
+		},
+		google: {
+			enabled: true,
+			clientId: env.GOOGLE_CLIENT_ID,
+			clientSecret: env.GOOGLE_CLIENT_SECRET,
+		},
+	},
 	plugins: [nextCookies()],
 	session: {
 		cookieCache: {
@@ -40,8 +56,8 @@ export const auth = betterAuth({
 	advanced: {
 		defaultCookieAttributes: {
 			httpOnly: true,
-			secure: true,
+			secure: env.NODE_ENV === "production",
 		},
-		useSecureCookies: true,
+		useSecureCookies: env.NODE_ENV === "production",
 	},
 });

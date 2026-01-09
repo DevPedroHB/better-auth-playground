@@ -10,15 +10,12 @@ export const signUpAction = actionClient
 	.metadata({ actionName: "signUpAction" })
 	.inputSchema(signUpSchema)
 	.action(async ({ parsedInput: { confirmPassword, ...data } }) => {
-		const callbackURL = "/";
-
 		await auth.api.signUpEmail({
 			headers: await headers(),
 			body: {
 				...data,
-				callbackURL,
 			},
 		});
 
-		permanentRedirect(callbackURL);
+		permanentRedirect("/");
 	});

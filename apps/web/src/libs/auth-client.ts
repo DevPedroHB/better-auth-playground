@@ -1,6 +1,6 @@
-import { env } from "@better-auth-playground/env";
 import { createAuthClient } from "better-auth/react";
+import { env } from "./env";
 
 export const authClient = createAuthClient({
-	baseURL: env.nextjs.BETTER_AUTH_URL,
+	baseURL: env.BETTER_AUTH_URL,
 });

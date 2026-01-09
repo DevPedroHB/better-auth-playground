@@ -6,8 +6,14 @@ export const env = createEnv({
 		NODE_ENV: z
 			.enum(["development", "test", "production"])
 			.default("development"),
-		BETTER_AUTH_SECRET: z.string().min(1),
+		BETTER_AUTH_SECRET: z.string(),
 		BETTER_AUTH_URL: z.url(),
+		DISCORD_CLIENT_ID: z.string(),
+		DISCORD_CLIENT_SECRET: z.string(),
+		GITHUB_CLIENT_ID: z.string(),
+		GITHUB_CLIENT_SECRET: z.string(),
+		GOOGLE_CLIENT_ID: z.string(),
+		GOOGLE_CLIENT_SECRET: z.string(),
 	},
 	clientPrefix: "NEXT_PUBLIC_",
 	client: {},
