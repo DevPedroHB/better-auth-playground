@@ -1,9 +1,17 @@
 {
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.9"
+  },
+  "exports": {
+    "./base": "./base.json",
+    "./nextjs": "./nextjs.json"
+  },
   "license": "MIT",
   "name": "@better-auth-playground/biome-config",
   "private": true,
   "publishConfig": {
     "access": "public"
   },
+  "type": "module",
   "version": "1.0.0"
 }

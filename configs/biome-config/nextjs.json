@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.9/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -7,6 +7,7 @@
       }
     }
   },
+  "extends": ["./base.json"],
   "files": {
     "ignoreUnknown": true,
     "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
@@ -29,7 +30,6 @@
       }
     }
   },
-  "root": false,
   "vcs": {
     "clientKind": "git",
     "enabled": true,

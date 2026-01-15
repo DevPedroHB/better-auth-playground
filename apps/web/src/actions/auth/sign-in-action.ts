@@ -7,15 +7,15 @@ import { headers } from "next/headers";
 import { permanentRedirect } from "next/navigation";
 
 export const signInAction = actionClient
-	.metadata({ actionName: "signInAction" })
-	.inputSchema(signInSchema)
-	.action(async ({ parsedInput }) => {
-		await auth.api.signInEmail({
-			headers: await headers(),
-			body: {
-				...parsedInput,
-			},
-		});
+  .metadata({ actionName: "signInAction" })
+  .inputSchema(signInSchema)
+  .action(async ({ parsedInput }) => {
+    await auth.api.signInEmail({
+      headers: await headers(),
+      body: {
+        ...parsedInput,
+      },
+    });
 
-		permanentRedirect("/");
-	});
+    permanentRedirect("/");
+  });

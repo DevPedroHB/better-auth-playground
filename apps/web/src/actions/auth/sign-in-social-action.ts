@@ -6,13 +6,13 @@ import { signInSocialSchema } from "@/types/schemas/sign-in-social-schema";
 import { headers } from "next/headers";
 
 export const signInSocialAction = actionClient
-	.metadata({ actionName: "signInSocialAction" })
-	.inputSchema(signInSocialSchema)
-	.action(async ({ parsedInput }) => {
-		await auth.api.signInSocial({
-			headers: await headers(),
-			body: {
-				provider: parsedInput,
-			},
-		});
-	});
+  .metadata({ actionName: "signInSocialAction" })
+  .inputSchema(signInSocialSchema)
+  .action(async ({ parsedInput }) => {
+    await auth.api.signInSocial({
+      headers: await headers(),
+      body: {
+        provider: parsedInput,
+      },
+    });
+  });

@@ -9,5 +9,5 @@ import { name, version } from "../../package.json";
  * @returns {string} The formatted storage key
  */
 export function formatStorageKey(key: string) {
-	return `${name}:v${version}:${key}`;
+  return `${name}:v${version}:${key}`;
 }

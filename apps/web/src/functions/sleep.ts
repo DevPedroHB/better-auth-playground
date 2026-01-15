@@ -5,5 +5,5 @@
  * @returns {Promise<void>} A promise that resolves after the given number of seconds.
  */
 export function sleep(seconds = 2) {
-	return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
+  return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
 }
